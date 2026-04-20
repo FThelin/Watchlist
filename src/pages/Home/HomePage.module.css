@@ -1,0 +1,26 @@
+.page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+}
+
+.logo {
+  font-family: "Megrim", system-ui;
+  color: rgb(228, 219, 134);
+}
+
+.img {
+  height: 25rem;
+}
+
+.page > p {
+  width: 50%;
+  text-align: center;
+}
+
+.link {
+  color: rgb(228, 219, 134);
+  text-decoration: underline;
+}

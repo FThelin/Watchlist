@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+}
+
+.logo {
+  font-family: "Megrim", system-ui;
+  font-size: 40px;
+  color: rgb(228, 219, 134);
+}
+
+.nav {
+  display: flex;
+  list-style-type: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  gap: 20px;
+  color: rgb(233, 233, 233);
+}
+
+.nav > li:hover {
+  cursor: pointer;
+  color: rgb(228, 219, 134);
+}
