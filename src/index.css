@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Megrim&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #2e2555;
+  background: radial-gradient(
+    circle,
+    rgba(46, 37, 85, 1) 0%,
+    rgba(27, 26, 45, 1) 55%,
+    rgba(0, 0, 0, 1) 100%
+  );
+
+  min-height: 100vh;
+  color: lightgray;
+  font-family: "Open Sans", sans-serif;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,12 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.title {
+  font-family: "Megrim", system-ui;
+  font-size: 22px;
+  color: rgb(228, 219, 134);
+}
