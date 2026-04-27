@@ -9,5 +9,5 @@ Du kan när som helst dubbelkolla din lösning genom att hoppa till rätt steg (
 Använd Git för att växla mellan olika steg i projektet:
 
 ```bash
-git checkout steg1
+git checkout step1
 ```
