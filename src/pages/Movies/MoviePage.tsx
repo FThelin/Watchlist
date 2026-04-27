@@ -1,15 +1,29 @@
+import { useEffect, useState } from "react";
 import ContentGrid from "../../components/common/ContentGrid/ContentGrid.tsx";
 import FilterDropdown from "../../components/common/FilterDropdown/FilterDropdown.tsx";
-import type { IContent } from "../../types.ts";
+import type { IContentCard } from "../../types.ts";
 import styles from "./MoviePage.module.css";
 
 const MoviePage = () => {
-  const movies: IContent[] = [
-    { id: "1", title: "Movie1" },
-    { id: "2", title: "Movie2" },
-    { id: "3", title: "Movie3" },
-    { id: "4", title: "Movie4" },
-  ];
+  const [movies, setMovies] = useState<IContentCard[] | null>(null);
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/popular?api_key=${
+            import.meta.env.VITE_API_KEY
+          }`,
+        );
+        const data = await response.json();
+
+        setMovies(data.results);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchMovies();
+  }, []);
 
   return (
     <div className={styles.page}>
