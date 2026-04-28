@@ -1,5 +1,5 @@
 import type { IContentCard } from "../../../types.ts";
-import AddToWatchlistBtn from "../FavoritesButton/AddToWatchlistBtn.tsx";
+import AddToWatchlistBtn from "../AddToWatchlistButton/AddToWatchlistBtn.tsx";
 import styles from "./ContentCard.module.css";
 
 const ContentCard = ({ content }: { content: IContentCard }) => {

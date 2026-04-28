@@ -1,4 +1,4 @@
-import AddToWatchlistBtn from "../../components/common/FavoritesButton/AddToWatchlistBtn.tsx";
+import AddToWatchlistBtn from "../../components/common/AddToWatchlistButton/AddToWatchlistBtn.tsx";
 
 const ContentDetails = () => {
   return (
