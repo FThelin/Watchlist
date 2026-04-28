@@ -1,14 +1,13 @@
-import type { IContent } from "../../../types.ts";
+import type { IContentCard } from "../../../types.ts";
 import ContentCard from "../ContentCard/ContentCard.tsx";
 import styles from "./ContentGrid.module.css";
 
-const ContentGrid = ({ content }: { content: IContent[] }) => {
+const ContentGrid = ({ content }: { content: IContentCard[] | null }) => {
   return (
     <div className={styles.grid}>
-      <ContentCard content={content[0]} />
-      <ContentCard content={content[1]} />
-      <ContentCard content={content[2]} />
-      <ContentCard content={content[3]} />
+      {content?.map((c) => (
+        <ContentCard key={c.id} content={c} />
+      ))}
     </div>
   );
 };
