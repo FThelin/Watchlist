@@ -1,11 +1,20 @@
 import { Button } from "@mui/material";
 
-const AddToWatchlistBtn = () => {
+interface Props {
+  size: "small" | "medium" | "large";
+  variant: "text" | "outlined" | "contained";
+}
+
+const AddToWatchlistBtn = ({ size, variant }: Props) => {
   return (
     <Button
-      size="small"
-      variant="text"
-      style={{ color: "white", fontSize: 11 }}
+      size={size}
+      variant={variant}
+      style={{
+        color: variant === "text" ? "white" : "black",
+        fontSize: 11,
+        backgroundColor: variant === "contained" ? "rgb(228, 219, 134)" : "",
+      }}
     >
       Add to watchlist +
     </Button>

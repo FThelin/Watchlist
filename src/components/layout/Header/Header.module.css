@@ -19,10 +19,14 @@
   font-weight: 600;
   letter-spacing: 2px;
   gap: 20px;
-  color: rgb(233, 233, 233);
 }
 
-.nav > li:hover {
+.nav > a {
+  color: rgb(233, 233, 233);
+  text-decoration: none;
+}
+
+.nav > a:hover {
   cursor: pointer;
   color: rgb(228, 219, 134);
 }

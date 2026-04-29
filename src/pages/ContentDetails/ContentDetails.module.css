@@ -1,0 +1,68 @@
+.detailsPage {
+  height: 100vh;
+  background-color: rgb(21, 19, 31);
+}
+
+.image {
+  height: 60%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(21, 19, 31, 0.8) 90%,
+    rgb(21, 19, 31) 100%
+  );
+
+  pointer-events: none;
+}
+
+.details {
+  width: 60%;
+  padding: 20px;
+}
+
+.info {
+  height: 2.3rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.genre {
+  border: 1px solid rgb(244, 244, 244);
+  font-size: 14px;
+  padding: 5px 15px;
+}
+
+.score {
+  height: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  font-size: 12px;
+}
+
+.score img {
+  height: 60%;
+}
+
+.score p {
+  margin: 0;
+  padding: 0;
+}
+
+.overview {
+  font-weight: 300;
+  font-size: 15px;
+  margin-bottom: 30px;
+}

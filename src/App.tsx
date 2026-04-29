@@ -6,6 +6,8 @@ import MoviePage from "./pages/Movies/MoviePage.tsx";
 import SeriesPage from "./pages/Series/SeriesPage.tsx";
 import Watchlist from "./pages/Watchlist/Watchlist.tsx";
 import { createTheme, ThemeProvider } from "@mui/material";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import ContentDetails from "./pages/ContentDetails/ContentDetails.tsx";
 
 const darkTheme = createTheme({
   palette: {
@@ -14,38 +16,21 @@ const darkTheme = createTheme({
 });
 
 const App = () => {
-  const [selectedPage, setSelectedPage] = useState("home");
-
-  const changePage = (page: string) => {
-    setSelectedPage(page);
-  };
-
-  const renderPage = () => {
-    switch (selectedPage) {
-      case "home": {
-        return <HomePage />;
-      }
-      case "movies": {
-        return <MoviePage />;
-      }
-      case "series": {
-        return <SeriesPage />;
-      }
-      case "watchlist": {
-        return <Watchlist />;
-      }
-      default: {
-        return <HomePage />;
-      }
-    }
-  };
-
   return (
-    <ThemeProvider theme={darkTheme}>
-      <Header changePage={changePage} />
-      {renderPage()}
-      <Footer />
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={darkTheme}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<MoviePage />} />
+          <Route path="/series" element={<SeriesPage />} />
+          <Route path="/watchlist" element={<Watchlist />} />
+          <Route path="/:contentType/:id" element={<ContentDetails />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+        <Footer />
+      </ThemeProvider>
+    </BrowserRouter>
   );
 };
 

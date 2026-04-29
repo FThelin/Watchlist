@@ -11,16 +11,16 @@ body {
 }
 
 body {
-  background: #2e2555;
+  /* background: #2e2555;
   background: radial-gradient(
     circle,
     rgba(46, 37, 85, 1) 0%,
     rgba(27, 26, 45, 1) 55%,
     rgba(0, 0, 0, 1) 100%
-  );
-
+  ); */
+  background-color: rgb(21, 19, 31);
   min-height: 100vh;
-  color: lightgray;
+  color: rgb(244, 244, 244);
   font-family: "Open Sans", sans-serif;
 }
 
