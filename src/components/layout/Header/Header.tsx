@@ -1,19 +1,16 @@
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 
-interface Props {
-  changePage: (page: string) => void;
-}
-
-const Header = ({ changePage }: Props) => {
+const Header = () => {
   return (
     <header className={styles.header}>
       <h1 className={styles.logo}>Watchlist</h1>
-      <ul className={styles.nav}>
-        <li onClick={() => changePage("home")}>Home</li>
-        <li onClick={() => changePage("movies")}>Movies</li>
-        <li onClick={() => changePage("series")}>Series</li>
-        <li onClick={() => changePage("watchlist")}>Watchlist</li>
-      </ul>
+      <nav className={styles.nav}>
+        <Link to="/">Home</Link>
+        <Link to="/movies">Movies</Link>
+        <Link to="/series">Series</Link>
+        <Link to="/watchlist">Watchlist</Link>
+      </nav>
     </header>
   );
 };

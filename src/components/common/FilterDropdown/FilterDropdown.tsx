@@ -1,11 +1,15 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import type { ContentListType } from "../../../types.ts";
+import { useLocation } from "react-router-dom";
 interface Props {
   listType: ContentListType;
   updateListType: (listType: ContentListType) => void;
 }
 
 const FilterDropdown = ({ listType, updateListType }: Props) => {
+  const { pathname } = useLocation();
+  const path = pathname.split("/")[1];
+
   return (
     <FormControl>
       <InputLabel id="content-select-label">Select category</InputLabel>
@@ -19,8 +23,11 @@ const FilterDropdown = ({ listType, updateListType }: Props) => {
       >
         <MenuItem value={"popular"}>Popular</MenuItem>
         <MenuItem value={"top_rated"}>Top Rated</MenuItem>
-        {/* //TODO Denna skall vara on_the_air om vi är inne på tv-serier. Fixa med url parameter när vi har routing på plats */}
-        <MenuItem value={"upcoming"}>Upcoming</MenuItem>
+        {path === "series" ? (
+          <MenuItem value={"on_the_air"}>On The Air</MenuItem>
+        ) : (
+          <MenuItem value={"upcoming"}>Upcoming</MenuItem>
+        )}
       </Select>
     </FormControl>
   );
