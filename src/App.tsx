@@ -5,6 +5,13 @@ import HomePage from "./pages/Home/HomePage.tsx";
 import MoviePage from "./pages/Movies/MoviePage.tsx";
 import SeriesPage from "./pages/Series/SeriesPage.tsx";
 import Watchlist from "./pages/Watchlist/Watchlist.tsx";
+import { createTheme, ThemeProvider } from "@mui/material";
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
 
 const App = () => {
   const [selectedPage, setSelectedPage] = useState("home");
@@ -34,11 +41,11 @@ const App = () => {
   };
 
   return (
-    <>
+    <ThemeProvider theme={darkTheme}>
       <Header changePage={changePage} />
       {renderPage()}
       <Footer />
-    </>
+    </ThemeProvider>
   );
 };
 
