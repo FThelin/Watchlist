@@ -1,22 +1,20 @@
-export interface IContentCard {
-  id: number;
-  title?: string;
-  name?: string;
-  poster_path: string;
-  release_date: string;
-}
-
-export interface IContentDetails {
+interface IContentBase {
   id: number;
   backdrop_path: string;
   genres: GenreType[];
-  title?: string;
-  name?: string;
   overview: string;
   release_date: string;
   status: string;
   vote_average: number;
   vote_count: number;
+  poster_path: string;
+}
+
+export interface IContentMovie extends IContentBase {
+  title: string;
+}
+export interface IContentSeries extends IContentBase {
+  name: string;
 }
 
 type GenreType = {
@@ -27,3 +25,5 @@ type GenreType = {
 export type MovieListType = "popular" | "top_rated" | "upcoming";
 export type SeriesListType = "popular" | "top_rated" | "on_the_air";
 export type ContentListType = MovieListType | SeriesListType;
+
+export type IContent = IContentMovie | IContentSeries;

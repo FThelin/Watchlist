@@ -8,6 +8,7 @@ import Watchlist from "./pages/Watchlist/Watchlist.tsx";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ContentDetails from "./pages/ContentDetails/ContentDetails.tsx";
+import WatchListProvider from "./context/WatchlistContext.tsx";
 
 const darkTheme = createTheme({
   palette: {
@@ -17,20 +18,22 @@ const darkTheme = createTheme({
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={darkTheme}>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/movies" element={<MoviePage />} />
-          <Route path="/series" element={<SeriesPage />} />
-          <Route path="/watchlist" element={<Watchlist />} />
-          <Route path="/:contentType/:id" element={<ContentDetails />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-        <Footer />
-      </ThemeProvider>
-    </BrowserRouter>
+    <WatchListProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={darkTheme}>
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/movies" element={<MoviePage />} />
+            <Route path="/series" element={<SeriesPage />} />
+            <Route path="/watchlist" element={<Watchlist />} />
+            <Route path="/:contentType/:id" element={<ContentDetails />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+          <Footer />
+        </ThemeProvider>
+      </BrowserRouter>
+    </WatchListProvider>
   );
 };
 

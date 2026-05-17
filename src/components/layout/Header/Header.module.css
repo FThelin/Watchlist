@@ -26,7 +26,12 @@
   text-decoration: none;
 }
 
-.nav > a:hover {
+.nav a:hover {
   cursor: pointer;
   color: rgb(228, 219, 134);
+}
+
+.nav :global(.active) {
+  border-bottom: 2px solid rgb(228, 219, 134);
+  /* color: rgb(228, 219, 134); */
 }
