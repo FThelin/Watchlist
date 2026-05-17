@@ -27,3 +27,7 @@
   font-size: 14px;
   text-shadow: 2px 2px 4px black;
 }
+
+a {
+  text-decoration: none;
+}

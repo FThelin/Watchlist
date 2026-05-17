@@ -1,0 +1,12 @@
+.watchlist {
+  display: flex;
+  padding: 3rem 10rem;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.movies {
+}
+
+.series {
+}

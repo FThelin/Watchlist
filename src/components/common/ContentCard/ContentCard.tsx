@@ -1,10 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
-import type { IContentCard } from "../../../types.ts";
 import AddToWatchlistBtn from "../AddToWatchlistButton/AddToWatchlistBtn.tsx";
 import styles from "./ContentCard.module.css";
+import type { IContent } from "../../../types.ts";
 
-const ContentCard = ({ content }: { content: IContentCard }) => {
+const ContentCard = ({ content }: { content: IContent }) => {
   const { pathname } = useLocation();
+
   return (
     <Link to={`${pathname}/${content.id}`}>
       <div
@@ -14,10 +15,10 @@ const ContentCard = ({ content }: { content: IContentCard }) => {
         }}
       >
         <div className={styles.cardTitle}>
-          <h3>{content.title ? content.title : content.name}</h3>
+          <h3>{"title" in content ? content.title : content.name}</h3>
         </div>
         <div className={styles.cardButton}>
-          <AddToWatchlistBtn size="small" variant="text" />
+          <AddToWatchlistBtn size="small" variant="text" content={content} />
         </div>
       </div>
     </Link>

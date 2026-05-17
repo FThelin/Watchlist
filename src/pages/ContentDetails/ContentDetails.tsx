@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
 import AddToWatchlistBtn from "../../components/common/AddToWatchlistButton/AddToWatchlistBtn.tsx";
 import { useEffect, useState } from "react";
-import type { IContentDetails } from "../../types.ts";
+import type { IContent } from "../../types.ts";
 import styles from "./ContentDetails.module.css";
 import IMDB from "../../assets/imdb.png";
 
 const ContentDetails = () => {
-  const [content, setContent] = useState<IContentDetails | null>(null);
+  const [content, setContent] = useState<IContent | null>(null);
 
   const params = useParams();
   const path =
@@ -58,9 +58,13 @@ const ContentDetails = () => {
             <p>{content.release_date}</p>
           </div>
         </div>
-        <h2>{content.title ? content.title : content.name}</h2>
+        <h2>{"title" in content ? content.title : content.name}</h2>
         <p className={styles.overview}>{content.overview}</p>
-        <AddToWatchlistBtn size="medium" variant="contained" />
+        <AddToWatchlistBtn
+          size="medium"
+          variant="contained"
+          content={content}
+        />
       </div>
     </div>
   ) : (
