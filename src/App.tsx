@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Footer from "./components/layout/Footer/Footer.tsx";
 import Header from "./components/layout/Header/Header.tsx";
 import HomePage from "./pages/Home/HomePage.tsx";
