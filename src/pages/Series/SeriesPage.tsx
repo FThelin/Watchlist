@@ -3,13 +3,13 @@ import ContentGrid from "../../components/common/ContentGrid/ContentGrid.tsx";
 import FilterDropdown from "../../components/common/FilterDropdown/FilterDropdown.tsx";
 import {
   type ContentListType,
-  type IContentCard,
+  type IContent,
   type SeriesListType,
 } from "../../types.ts";
 import styles from "./SeriesPage.module.css";
 
 const SeriesPage = () => {
-  const [series, setSeries] = useState<IContentCard[] | null>(null);
+  const [series, setSeries] = useState<IContent[] | null>(null);
   const [listType, setListType] = useState<SeriesListType>("popular");
 
   useEffect(() => {
