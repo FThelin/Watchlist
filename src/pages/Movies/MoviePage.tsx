@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import ContentGrid from "../../components/common/ContentGrid/ContentGrid.tsx";
 import FilterDropdown from "../../components/common/FilterDropdown/FilterDropdown.tsx";
-import type { IContent, ContentListType, MovieListType } from "../../types.ts";
+import type {
+  IContentMovie,
+  ContentListType,
+  MovieListType,
+} from "../../types.ts";
 import styles from "./MoviePage.module.css";
 
 const MoviePage = () => {
-  const [movies, setMovies] = useState<IContent[] | null>(null);
+  const [movies, setMovies] = useState<IContentMovie[] | null>(null);
   const [listType, setListType] = useState<MovieListType>("popular");
 
   useEffect(() => {
